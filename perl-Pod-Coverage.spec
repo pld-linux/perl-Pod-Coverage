@@ -1,21 +1,22 @@
-#
+
 # Conditional build:
-# _without_tests - do not perform "make test"
-#
+%bcond_without	tests	# do not perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Pod
 %define		pnam	Coverage
 Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensive
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
-Version:	0.11
-Release:	4
+Version:	0.12
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	18c105b934b096dbf8d0abd3109454b5
+# Source0-md5:	9502b2e9a2ae87cf46440bef18c1613f
 BuildRequires:	perl-devel >= 5.6
-%if %{?_without_tests:0}%{!?_without_tests:1}
+BuildRequires:	perl-Module-Build >= 0.20
+%if %{with tests}
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Test-Simple
 %endif
@@ -36,16 +37,17 @@ opisuj±cego funkcjê.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__perl} Build.PL \
+	installdirs=vendor \
+	destdir=$RPM_BUILD_ROOT
+./Build
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
