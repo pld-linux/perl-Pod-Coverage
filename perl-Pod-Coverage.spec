@@ -19,7 +19,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-Module-Build >= 0.21-2
 %if %{with tests}
 BuildRequires:	perl-Devel-Symdump >= 2.01
-BuildRequires:	perl-Pod-Parser >= 1.13
+BuildRequires:	perl-Pod-Parser >= 1.16
 BuildRequires:	perl-Test-Simple
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
