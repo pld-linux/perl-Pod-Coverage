@@ -9,7 +9,7 @@ Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensiv
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.11
-Release:	3
+Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
