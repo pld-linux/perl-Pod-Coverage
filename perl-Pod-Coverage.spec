@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Pod
 %define		pnam	Coverage
-Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensive
+Summary:	Pod::Coverage - checks if the documentation of a module is comprehensive
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.11
