@@ -1,5 +1,3 @@
-# ToDo:
-# - include podcover binary?
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
@@ -57,6 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
 %dir %{perl_vendorarch}/Pod
 %{perl_vendorarch}/Pod/*.pm
 %{perl_vendorarch}/Pod/Coverage
