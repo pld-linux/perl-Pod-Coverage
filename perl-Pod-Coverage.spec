@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Pod
 %define		pnam	Coverage
@@ -15,7 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9502b2e9a2ae87cf46440bef18c1613f
 BuildRequires:	perl-devel >= 5.6
-BuildRequires:	perl-Module-Build >= 0.20
+BuildRequires:	perl-Module-Build >= 0.21-2
 %if %{with tests}
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Test-Simple
@@ -39,6 +39,7 @@ opisuj±cego funkcjê.
 %build
 %{__perl} Build.PL \
 	installdirs=vendor \
+	config='optimize=%{rpmcflags}' \
 	destdir=$RPM_BUILD_ROOT
 ./Build
 
