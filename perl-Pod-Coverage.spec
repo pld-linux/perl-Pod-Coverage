@@ -9,7 +9,7 @@ Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensiv
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.11
-Release:	3
+Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -18,7 +18,7 @@ BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Test-Simple
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +35,8 @@ opisuj±cego funkcjê.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
@@ -50,11 +51,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{perl_sitearch}/Pod
-%{perl_sitearch}/Pod/*.pm
-%{perl_sitearch}/Pod/Coverage
-%dir %{perl_sitearch}/auto/Pod
-%dir %{perl_sitearch}/auto/Pod/Coverage
-%{perl_sitearch}/auto/Pod/Coverage/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Pod/Coverage/*.so
+%dir %{perl_vendorarch}/Pod
+%{perl_vendorarch}/Pod/*.pm
+%{perl_vendorarch}/Pod/Coverage
+%dir %{perl_vendorarch}/auto/Pod
+%dir %{perl_vendorarch}/auto/Pod/Coverage
+%{perl_vendorarch}/auto/Pod/Coverage/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Pod/Coverage/*.so
 %{_mandir}/man3/*
