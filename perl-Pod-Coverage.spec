@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Pod
-%define		pnam	Coverage
+%define	pdir	Pod
+%define	pnam	Coverage
 Summary:	Pod::Coverage - checks if the documentation of a module is comprehensive
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
