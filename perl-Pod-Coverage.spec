@@ -41,6 +41,7 @@ opisuj±cego funkcjê.
 %{__perl} Build.PL \
 	installdirs=vendor \
 	config='optimize=%{rpmcflags}' \
+	perl="%{__perl}" \
 	destdir=$RPM_BUILD_ROOT
 ./Build
 
