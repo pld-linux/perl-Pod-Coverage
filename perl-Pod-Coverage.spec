@@ -5,36 +5,37 @@
 %define	pdir	Pod
 %define	pnam	Coverage
 Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensive
-#Summary(pl):	
+Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.11
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Test-Simple
 %endif
-BuildArch:	noarch
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module provides a mechanism for determining if the pod for a given
-module is comprehensive.  It expects to find either a =head(n>1) or an
-=item block documenting a subroutine.
+This module provides a mechanism for determining if the pod for a
+given module is comprehensive. It expects to find either a =head(n>1)
+or an =item block documenting a subroutine.
 
-# %description -l pl
-# TODO
+%description -l pl
+Ten modu³ udostêpnia mechamizm do okre¶lania, czy dokumentacja pod dla
+danego modu³u jest kompletna. Oczekuje bloku =head(n>1) lub =item
+opisuj±cego funkcjê.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
-%{__make}
+%{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
 
