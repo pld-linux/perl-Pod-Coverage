@@ -1,3 +1,5 @@
+# ToDo:
+# - include podcover binary?
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
@@ -8,12 +10,12 @@
 Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensive
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
-Version:	0.12
+Version:	0.13
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	9502b2e9a2ae87cf46440bef18c1613f
+# Source0-md5:	2912c7c01c918040f964f8f0894da8ea
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl-Module-Build >= 0.21-2
 %if %{with tests}
