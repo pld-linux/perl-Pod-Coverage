@@ -10,7 +10,8 @@ Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.13
 Release:	1
-License:	GPL/Artistic
+# as perl itself
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	2912c7c01c918040f964f8f0894da8ea
