@@ -1,14 +1,15 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Pod
-%define	pnam	Coverage
+%define		pdir	Pod
+%define		pnam	Coverage
 Summary:	Pod::Coverage - Checks if the documentation of a module is comprehensive
 Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
 Name:		perl-Pod-Coverage
 Version:	0.11
-Release:	2
+Release:	3
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -49,9 +50,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitearch}/%{pdir}/*.pm
-%{perl_sitearch}/%{pdir}/%{pnam}
-%dir %{perl_sitearch}/auto/%{pdir}/%{pnam}
-%{perl_sitearch}/auto/%{pdir}/%{pnam}/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/%{pdir}/%{pnam}/*.so
+%dir %{perl_sitearch}/Pod
+%{perl_sitearch}/Pod/*.pm
+%{perl_sitearch}/Pod/Coverage
+%dir %{perl_sitearch}/auto/Pod
+%dir %{perl_sitearch}/auto/Pod/Coverage
+%{perl_sitearch}/auto/Pod/Coverage/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Pod/Coverage/*.so
 %{_mandir}/man3/*
