@@ -6,7 +6,7 @@
 %define		pdir	Pod
 %define		pnam	Coverage
 Summary:	Pod::Coverage - checks if the documentation of a module is comprehensive
-Summary(pl):	Pod::Coverage - sprawdzanie kompletno¶ci dokumentacji modu³u
+Summary(pl.UTF-8):   Pod::Coverage - sprawdzanie kompletnoÅ›ci dokumentacji moduÅ‚u
 Name:		perl-Pod-Coverage
 Version:	0.18
 Release:	1
@@ -31,10 +31,10 @@ This module provides a mechanism for determining if the pod for a
 given module is comprehensive. It expects to find either a =head(n>1)
 or an =item block documenting a subroutine.
 
-%description -l pl
-Ten modu³ udostêpnia mechamizm do okre¶lania, czy dokumentacja pod dla
-danego modu³u jest kompletna. Oczekuje bloku =head(n>1) lub =item
-opisuj±cego funkcjê.
+%description -l pl.UTF-8
+Ten moduÅ‚ udostÄ™pnia mechamizm do okreÅ›lania, czy dokumentacja pod dla
+danego moduÅ‚u jest kompletna. Oczekuje bloku =head(n>1) lub =item
+opisujÄ…cego funkcjÄ™.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
