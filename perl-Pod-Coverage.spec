@@ -13,17 +13,18 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	93af52dac8bafed7702ed290d988ffa4
-BuildRequires:	perl-devel >= 1:5.8.0
+URL:		http://search.cpan.org/dist/Pod-Coverage/
 BuildRequires:	perl-Module-Build >= 0.21-2
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Pod-Parser >= 1.13
 BuildRequires:	perl-Test-Pod >= 1.00
 BuildRequires:	perl-Test-Simple
 %endif
-BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
