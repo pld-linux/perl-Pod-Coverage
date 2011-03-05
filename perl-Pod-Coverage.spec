@@ -8,13 +8,13 @@
 Summary:	Pod::Coverage - checks if the documentation of a module is comprehensive
 Summary(pl.UTF-8):	Pod::Coverage - sprawdzanie kompletności dokumentacji modułu
 Name:		perl-Pod-Coverage
-Version:	0.20
+Version:	0.21
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	292a5b8d3a93597af441d3e6467b8ad6
+Source0:	http://www.cpan.org/modules/by-module/Pod/RCLAMP/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	3d8acba0817cc01b03d63bb05e4cef52
 URL:		http://search.cpan.org/dist/Pod-Coverage/
 BuildRequires:	perl-Module-Build >= 0.21-2
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%{perl_vendorlib}/Pod/*.pm
+%attr(755,root,root) %{_bindir}/pod_cover
+%{perl_vendorlib}/Pod/Coverage.pm
 %{perl_vendorlib}/Pod/Coverage
-%{_mandir}/man3/*
+%{_mandir}/man3/Pod::Coverage*.3pm*
