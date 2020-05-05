@@ -14,10 +14,11 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	12229e553ee7887680ee3db11da5ee52
-URL:		http://search.cpan.org/dist/Pod-Coverage/
+URL:		https://metacpan.org/release/Pod-Coverage
 BuildRequires:	perl-Module-Build >= 0.21-2
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Devel-Symdump >= 2.01
 BuildRequires:	perl-Pod-Parser >= 1.13
